@@ -119,11 +119,13 @@
             <name>WSO2 Public Repository</name>
             <url>https://maven.wso2.org/nexus/content/repositories/public/</url>
         </repository>
+        <!--
         <repository>
             <id>hortonworks-releases</id>
             <name>Hortonworks Repository</name>
             <url>https://repo.hortonworks.com/content/repositories/releases/</url>
         </repository>
+        -->
         <repository>
             <id>adobe-public</id>
             <name>AdobePublic Repository</name>
@@ -233,7 +235,7 @@
         <version.maven-help-plugin>3.3.0</version.maven-help-plugin>
 
         <!-- UML -->
-        <version.plantuml-maven-plugin>1.5.2</version.plantuml-maven-plugin>
+        <version.plantuml-maven-plugin>0.2.14</version.plantuml-maven-plugin>
         <version.plantuml-maven-plugin.plantuml>1.2026.6</version.plantuml-maven-plugin.plantuml>
 
         <!-- Maven Reports and Site -->
@@ -274,9 +276,9 @@
         <skipTests>true</skipTests>
 
         <!-- Application Libs -->
-        <version.org.apache.commons-lang3>3.12.0</version.org.apache.commons-lang3>
-        <version.jackson.databind>2.14.1</version.jackson.databind>
-        <version.org.yaml.snakeyaml>1.33</version.org.yaml.snakeyaml>
+        <version.org.apache.commons-lang3>3.20.0</version.org.apache.commons-lang3>
+        <version.jackson.databind>2.22.0</version.jackson.databind>
+        <version.org.yaml.snakeyaml>2.6</version.org.yaml.snakeyaml>
         <version.javax.validation.api>3.0.2</version.javax.validation.api>
         <version.com.google.guava>31.1-jre</version.com.google.guava>
         <version.junit5>5.14.4</version.junit5>
@@ -397,7 +399,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>${version.jackson.databind}</version>
+                <version>2.22</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -1397,7 +1399,7 @@
             <dependencyManagement>
                 <dependencies>
                     <dependency>
-                        <groupId>com.github.funthomas424242</groupId>
+                        <groupId>com.github.davidmoten</groupId>
                         <artifactId>plantuml-maven-plugin</artifactId>
                         <version>${version.plantuml-maven-plugin}</version>
                         <type>maven-plugin</type>
@@ -1418,7 +1420,7 @@
             </dependencyManagement>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.funthomas424242</groupId>
+                    <groupId>com.github.davidmoten</groupId>
                     <artifactId>plantuml-maven-plugin</artifactId>
                     <type>maven-plugin</type>
                 </dependency>
@@ -1430,20 +1432,40 @@
             </dependencies>
             <build>
                 <finalName>${project.artifactId}</finalName>
-                <defaultGoal>clean com.github.funthomas424242:plantuml-maven-plugin:generate</defaultGoal>
+                <defaultGoal>clean com.github.davidmoten:plantuml-maven-plugin:generate</defaultGoal>
                 <plugins>
                     <plugin>
-                        <groupId>com.github.funthomas424242</groupId>
+                        <groupId>com.github.davidmoten</groupId>
                         <artifactId>plantuml-maven-plugin</artifactId>
                         <version>${version.plantuml-maven-plugin}</version>
                         <configuration>
-                            <truncatePattern>src/main/*</truncatePattern>
-                            <sourceFiles>
-                                <directory>${basedir}</directory>
-                                <includes>
-                                    <include>src/plantuml/**/*.puml</include>
-                                </includes>
-                            </sourceFiles>
+                            <executions>
+                                <execution>
+                                    <id>generate-diagrams</id>
+                                    <phase>generate-resources</phase>
+                                    <goals>
+                                        <goal>generate</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <sources>
+                                    <directory>${basedir}/src/main/plantuml</directory>
+                                    <includes>
+                                        <include>**/*.puml</include>
+                                    </includes>
+                                    <excludes>
+                                        <exclude>**/ignore-me.puml</exclude>
+                                    </excludes>
+                                </sources>
+                                <outputDirectory>${project.build.directory}/generated-diagrams</outputDirectory>
+                                <formats>
+                                    <format>png</format>
+                                    <format>svg</format>
+                                </formats>
+                                <preserveDirectoryStructure>false</preserveDirectoryStructure>
+                                <generateMarkdownIndex>true</generateMarkdownIndex>
+                            </configuration>
                         </configuration>
                         <dependencies>
                             <dependency>
