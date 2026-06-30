@@ -4,7 +4,7 @@
 
     <groupId>org.woehlke.computer.kurzweil</groupId>
     <artifactId>computer-kurzweil-parent</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.7</version>
     <packaging>pom</packaging>
 
     <name>Computer Kurzweil Parent</name>
@@ -21,7 +21,7 @@
         <connection>scm:git:git@github.com:thomaswoehlkebochum/computer-kurzweil-parent.git</connection>
         <developerConnection>scm:git:git@github.com:thomaswoehlkebochum/computer-kurzweil-parent.git</developerConnection>
         <url>https://github.com/thomaswoehlkebochum/computer-kurzweil-parent/tree/${project.scm.tag}</url>
-        <tag>HEAD</tag>
+        <tag>computer-kurzweil-parent-1.0.7</tag>
     </scm>
 
     <issueManagement>
