@@ -16,7 +16,7 @@
           <option name="pomFileName" />
           <option name="profilesMap">
             <map>
-              <entry key="uml" value="true" />
+              <entry key="release" value="true" />
             </map>
           </option>
           <option name="projectsCmdOptionValues">

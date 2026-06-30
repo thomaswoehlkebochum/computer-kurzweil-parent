@@ -18,14 +18,14 @@
     <inceptionYear>2022</inceptionYear>
 
     <scm>
-        <connection>scm:git:git@github.com:Computer-Kurzweil/computer-kurzweil-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:Computer-Kurzweil/computer-kurzweil-parent.git</developerConnection>
-        <url>https://github.com/Computer-Kurzweil/computer-kurzweil-parent/tree/${project.scm.tag}</url>
+        <connection>scm:git:git@github.com:thomaswoehlkebochum/computer-kurzweil-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:thomaswoehlkebochum/computer-kurzweil-parent.git</developerConnection>
+        <url>https://github.com/thomaswoehlkebochum/computer-kurzweil-parent/tree/${project.scm.tag}</url>
         <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/Computer-Kurzweil/computer-kurzweil-parent/issues/</url>
+        <url>https://github.com/thomaswoehlkebochum/computer-kurzweil-parent/issues/</url>
         <system>GitHub</system>
     </issueManagement>
 
@@ -47,16 +47,16 @@
     </distributionManagement>
 
     <organization>
-        <name>Computer Kurzweil</name>
-        <url>https://github.com/Computer-Kurzweil</url>
+        <name>thomaswoehlkebochum</name>
+        <url>https://github.com/thomaswoehlkebochum</url>
     </organization>
 
     <developers>
         <developer>
-            <id>thomaswoehlke</id>
+            <id>thomaswoehlkebochum</id>
             <name>Thomas Woehlke</name>
-            <email>thomas.woehlke@gmail.com</email>
-            <url>https://github.com/thomaswoehlke</url>
+            <email>thomas.woehlke.bochum@gmail.com</email>
+            <url>https://github.com/thomaswoehlkebochum</url>
             <timezone>Europe/Paris</timezone>
         </developer>
     </developers>
