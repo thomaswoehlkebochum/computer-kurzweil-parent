@@ -314,6 +314,7 @@
                 <artifactId>commons-io</artifactId>
                 <version>2.22.0</version>
             </dependency>
+            <!--
             <dependency>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-svnexe</artifactId>
@@ -344,6 +345,7 @@
                 <artifactId>maven-scm-client</artifactId>
                 <version>${version.maven.scm}</version>
             </dependency>
+            -->
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
@@ -479,6 +481,7 @@
                 <type>maven-plugin</type>
                 <scope>provided</scope>
             </dependency>
+            <!--
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-plugin</artifactId>
@@ -486,6 +489,7 @@
                 <type>maven-plugin</type>
                 <scope>provided</scope>
             </dependency>
+            -->
             <dependency>
                 <groupId>com.jcraft</groupId>
                 <artifactId>jsch</artifactId>
@@ -687,24 +691,26 @@
             <scope>provided</scope>
             <optional>false</optional>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-scm-plugin</artifactId>
             <type>maven-plugin</type>
             <exclusions>
                 <exclusion>
-                    <!-- TODO -->
                     <groupId>com.jcraft</groupId>
                     <artifactId>jsch</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
+        -->
         <dependency>
             <!-- TODO -->
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
             <version>0.1.55</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.apache.maven.scm</groupId>
             <artifactId>maven-scm-provider-gitexe</artifactId>
@@ -715,14 +721,17 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.apache.maven.scm</groupId>
             <artifactId>maven-scm-client</artifactId>
         </dependency>
+        -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
