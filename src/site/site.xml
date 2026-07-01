@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site xmlns="http://maven.apache.org/SITE/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SITE/2.1.0 https://maven.apache.org/xsd/site-2.1.0.xsd"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/DECORATION/1.3.0"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd"
   name="Computer Kurzweil">
     <skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-fluido-skin</artifactId>
-        <version>1.8</version>
+        <version>1.11.1</version>
     </skin>
-    <bannerLeft name="TW">
-        <image src="./img/thomas_woehlke__geburt_einer_vision__logo.png"/>
+    <bannerLeft>
+        <name>Computer Kurzweil Parent</name>
+        <src>/img/thomas_woehlke__geburt_einer_vision__logo.png</src>
+        <href>https://java.woehlke.org/</href>
     </bannerLeft>
+    <publishDate position="navigation-bottom"/>
     <poweredBy>
-        <logo name="Maven" href="http://maven.apache.org/"/>
+        <logo name="Maven" href="http://maven.apache.org/"
+              img="http://maven.apache.org/images/logos/maven-feather.png"/>
     </poweredBy>
-    <publishDate ></publishDate>
-    <custom>
-    	<template>
-    		<lastpublished>01.07.2026</lastpublished>
-    	</template>
-    </custom>
     <body>
         <links>
             <item name="GitHub project" href="https://github.com/Computer-Kurzweil/computer-kurzweil-parent/" />
@@ -29,24 +28,35 @@
             <item name="Fork this on GitHub" href="https://github.com/Computer-Kurzweil/computer-kurzweil-parent/" />
             <item name="parent pom for all computer kurzweil maven projects" href="index.html" />
         </breadcrumbs>
-        <menu name="Overview" inherit="top">
+        <menu name="Overview">
             <item name="Home" href="index.html" />
             <item name="Fork this on GitHub" href="https://github.com/Computer-Kurzweil/computer-kurzweil-parent/" />
             <item name="Computer-Kurzweil Group on GitHub" href="https://github.com/Computer-Kurzweil/" />
             <item name="Thomas Woehlke on GitHub" href="https://github.com/thomaswoehlke" />
             <item name="Donate" href="https://www.paypal.me/ThomasWoehlke" />
         </menu>
-        <menu name="License" inherit="top">
+        <menu name="License">
             <item name="License" href="LICENSE.html" />
             <item name="Copyright" href="LICENSE.code.html" />
         </menu>
-        <menu name="Progress" inherit="bottom">
+        <menu name="Progress">
             <item name="CHANGELOG" href="CHANGELOG.html" />
             <item name="TODO" href="TODO.html" />
             <item name="Github: Issues" href="https://github.com/Computer-Kurzweil/computer-kurzweil-parent/issues/" />
             <item name="Github: Milestones" href="https://github.com/Computer-Kurzweil/computer-kurzweil-parent/milestones" />
             <item name="Github: Releases" href="https://github.com/Computer-Kurzweil/computer-kurzweil-parent/releases/" />
         </menu>
-        <menu name="Maven Reports" ref="reports" inherit="bottom"/>
+        <menu name="Maven Reports" ref="reports"/>
     </body>
-</site>
+    <custom>
+        <fluidoSkin>
+            <topBarEnabled>true</topBarEnabled>
+            <topBarContailerStyle>width:90%</topBarContailerStyle>
+            <navBarStyle>navbar-inverse</navBarStyle>
+            <sideBarEnabled>false</sideBarEnabled>
+            <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+            <breadcrumbDivider>»</breadcrumbDivider>
+            <skipGenerationDate>true</skipGenerationDate>
+        </fluidoSkin>
+    </custom>
+</project>
