@@ -1458,7 +1458,7 @@
                         </executions>
                         <configuration>
                             <sources>
-                                <directory>${basedir}/src/main/plantuml</directory>
+                                <directory>${project.basedir}/src/main/plantuml</directory>
                                 <includes>
                                     <include>**/*.puml</include>
                                 </includes>
